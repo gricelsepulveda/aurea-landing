@@ -414,7 +414,7 @@ body {
       }
     }
   }
-  .work-gallery-article{
+  .other-article{
     width: calc(35% - 40px);
     @include flex-col-center;
     align-items: flex-end;
@@ -428,5 +428,99 @@ body {
     .au-h3{
       color: $primary-3;
     }
+    .au-a{
+      color: $secondary-2;
+      font: {
+        size: 32px;
+        weight: 500;
+      }
+      line-height: 48px;
+    }
   }
+}
+
+.newsletter{
+  margin-top: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+  .au-h2{
+    color: $primary-4;
+    display: block;
+    text-align: left;
+    font: {
+      size: 40px;
+      weight: 300;
+    }
+  }
+  .au-p {
+    font: {
+      size: 24px;
+    }
+    line-height: 40px;
+    color: $primary-4;
+  }
+  .au-fragment{
+    margin-top: 40px;
+    width: 100%;
+    @include flex-row-center;
+    justify-content: space-between;
+    .au-form{
+      @include flex-row-center;
+      .au-button{
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.au-button{
+  height: 50px;
+  line-height: 50px;
+  margin-left: 20px;
+  outline: 0;
+  border: 0;
+  @include shadow;
+  color: $secondary-1;
+  text-transform: uppercase;
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: $primary-4;
+  font: {
+    size: 20px;
+    weight: 500;
+  }
+}
+
+.au-input-component{
+  .au-input{
+    outline: 0;
+    border-radius: 4px;
+    height: 50px;
+    border: 2px solid $primary-4;
+    line-height: 50px;
+    color: $primary-4;
+    font: {
+      size: 24px;
+      weight: 300;
+    }
+    padding-left: 20px;
+    padding-right: 20px;
+    &::placeholder{
+      color: $primary-4;
+      font: {
+        size: 24px;
+        weight: 300;
+      }
+    }
+  }
+}
+
+.methodology{
+  margin-top: 120px;
+}
+
+.footer{
+  background-color: $secondary-2;
+  color: $white;
 }

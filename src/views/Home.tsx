@@ -118,7 +118,7 @@ const Home:React.FunctionComponent = () => {
           Revisa si el tiempo que pasas frente a una pantalla es el adecuado
         </h3>
         <div className='au-bar'>
-          <button type='button' className='au-button bar-button'/>
+          <button type='button' className='bar-button'/>
         </div>
         <p className='au-p'>
           Cantidad de horas saludable
@@ -182,17 +182,17 @@ const Home:React.FunctionComponent = () => {
         <h2 className='au-h2 newsletter'>
           Newsletter
         </h2>
-        <p className='au-p newsletter-description'>
-          Entérte de nuestras novedades
-        </p>
-        <div className='au-input-component'>
-          <input type='text' className='au-input' placeholder='@correo'/>
-          <p className='au-p input-validtation-message'>
-            <i className='aurea-font like'/>
-            Validaciones
+        <div className='au-fragment'>
+          <p className='au-p newsletter-description'>
+            Entérate de nuestras novedades
           </p>
+          <div className='au-form'>
+            <div className='au-input-component'>
+              <input type='text' className='au-input' placeholder='@correo'/>
+            </div>
+            <button type='button' className='au-button'>suscribirme</button>
+          </div>
         </div>
-        <button type='button' className='au-button'>suscribirme</button>
       </section>
       {/* METHODOLOGY SECTION */}
       <section className='au-section methodology'>
@@ -266,30 +266,18 @@ const Home:React.FunctionComponent = () => {
         <form>
           <div className='au-input-component'>
             <input type='text' className='au-input' placeholder='nombre'/>
-            <p className='au-p input-validtation-message'>
-              <i className='aurea-font like'/>
-              Validaciones
-            </p>
           </div>
           <div className='au-input-component'>
             <input type='text' className='au-input' placeholder='@correo'/>
-            <p className='au-p input-validtation-message'>
-              <i className='aurea-font like'/>
-              Validaciones
-            </p>
           </div>
           <div className='au-textarea-component'>
             <textarea className='au-textarea' placeholder='cuéntanos un poco de tu proyecto'/>
-            <p className='au-p textarea-validtation-message'>
-              <i className='aurea-font like'/>
-              Validaciones
-            </p>
           </div>
           <button type='button' className='au-button disabled' disabled>Enviar</button>
         </form>
       </section>
-      {/* CONTACT SECTION */}
-      <footer className='au-section contact'>
+      {/* FOOTER SECTION */}
+      <footer className='au-section footer'>
         <div className='au-fragment'>
           <h3 className='au-h3'>
             Filosofía
