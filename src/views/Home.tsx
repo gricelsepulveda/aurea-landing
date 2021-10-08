@@ -29,7 +29,7 @@ const Home:React.FunctionComponent = () => {
           </li>
           <li className='au-li nav-list-element'>
             <a className='au-a nav-list-link'>
-              <img src='#' alt='logo agencia Aurea'/>
+              <img src='./src/assets/logo.svg' alt='logo agencia Aurea'/>
             </a>
           </li>
           <li className='au-li nav-list-element'>
@@ -62,13 +62,13 @@ const Home:React.FunctionComponent = () => {
         </ul>
         <h1 className='au-h1 au-tag-list'>
           <a href='#' className='au-a tag-element'>
-            Tag 1
+            lorem ipsum
           </a>
           <a href='#' className='au-a tag-element'>
-            Tag 2
+            dolor sit
           </a>
           <a href='#' className='au-a tag-element'>
-            Tag 3
+            conseqtur
           </a> 
         </h1>
       </section>
@@ -83,7 +83,7 @@ const Home:React.FunctionComponent = () => {
             </article>
           </li>
           <li className='au-li slider-element'>
-            <article className='au-article slider-article active'>
+            <article className='au-article slider-article'>
               <p className='au-p slider-article-description'>
                 Segunda Slide
               </p>
@@ -114,9 +114,9 @@ const Home:React.FunctionComponent = () => {
       </section>
       {/* TIME SECTION */}
       <section className='au-section time'>
-        <h2 className='au-h2'>
+        <h3 className='au-h3'>
           Revisa si el tiempo que pasas frente a una pantalla es el adecuado
-        </h2>
+        </h3>
         <div className='au-bar'>
           <button type='button' className='au-button bar-button'/>
         </div>
@@ -141,7 +141,7 @@ const Home:React.FunctionComponent = () => {
             </article>
           </li>
           <li className='au-li slider-element'>
-          <article className='au-article slider-article active'>
+          <article className='au-article slider-article'>
               <h4 className='au-h4 slider-article-title'>
                 Respeta tu tiempo de ocio diario 2
               </h4>

@@ -19,31 +19,72 @@
 .au-section{
   padding-top: 40px;
   padding-bottom: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.au-h1, .au-h2, .au-h3, .au-h4{
+  @include clean-webkit;
+}
+
+.au-h2{
+  font: {
+    size: 56px;
+    weight: 500;
+  }
+  line-height: 56px;
+  color: $primary-3;
+  text-decoration: underline;
+}
+
+.au-h3{
+  font: {
+    size: 40px;
+    weight: 300;
+  }
+  line-height: 48px;
+  color: $secondary-2;
+}
+
+.au-p{
+  font: {
+    size: 24px;
+    weight: 500;
+  }
+  line-height: 40px;
+  color: $secondary-2;
 }
 
 body {
   @include zero-soft;
   position: relative;
-  overflow: hidden;
-  background-color: gray;
+  overflow-x: hidden;
+  background-color: $secondary-1;
   font-family: 'Work Sans', sans-serif;
   #root {
-    width: 1024px;
-    margin-left: calc((100% - 1024px) / 2);
+    width: 1366px;
+    margin-left: calc((100% - 1366px) / 2);
     position: relative;
-    background-color: white;
+    background-color: $secondary-1;
   }
 }
 
 .main-nav{
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($secondary-1, 1);
+  z-index: 1;
+  padding-top: 40px;
+  padding-bottom: 20px;
   .nav-list{
     width: 100%;
     @include flex-row-center;
     .nav-list-element{
       @include flex-row-center;
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 40px;
+      margin-right: 40px;
       .nav-list-link{
         @include flex-row-center;
         text-align: center;
@@ -62,8 +103,330 @@ body {
 }
 
 .welcome{
-  width: 100%;
+  padding-top: 220px;
   .slider{
     width: 100%;
+    position: relative;
+    &.phrases{
+      height: 60vh;
+      .slider-element{
+        .slider-article{
+          display: none;
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          &.active{
+            display: block;
+            opacity: 1;
+          }
+          .slider-article-description{
+            display: block;
+            position: relative;
+            line-height: 60vh;
+            margin: 0 auto;
+            text-align: center;
+            font: {
+              size: 40px;
+              weight: 300;
+            }
+            color: $primary-3;
+          }
+        }
+      }
+    }
+  }
+  .au-tag-list{
+    @include flex-row-center;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 60px;
+    .tag-element {
+      border-radius: 7px;
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 24px;
+      background-color: rgba($primary-3, 1);
+      margin-right: 20px;
+      font: {
+        size: 14px;
+        weight: 300;
+      }
+      color: $white;
+      line-height: 24px;
+      text-align: center;
+      &:last-of-type{
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.work-gallery{
+  width: 100%;
+  @include flex-row-center;
+  justify-content: space-between;
+  margin-top: 80px;
+  .slider{
+    .slider-controllers{
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      .nav-list{
+        height: 100%;
+        width: 100%;
+        @include flex-row-center;
+        justify-content: space-between;
+        .nav-list-element{
+          height: 100%;
+          width: 50px;
+          cursor: pointer;
+        }
+      }
+    }
+    &.cards{
+      width: 65%;
+      @include flex-row-center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      position: relative;
+      &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 250px;
+        background-color: $primary-3;
+      }
+      .slider-element{
+        margin-left: 40px;
+        &:last-of-type{
+          margin-left: 0px;
+        }
+        &:nth-child(even){
+          .slider-article{
+            background-image: url('../assets/place-01.png');
+          }
+        }
+        .slider-article{
+          position: relative;
+          border-radius: 40px;
+          background-color: gray;
+          width: 400px;
+          height: 500px;
+          background: {
+            position: center;
+            repeat: no-repeat;
+            size: cover;
+            color: $gray;
+            blend-mode: multiply;
+          }
+          background-image: url('../assets/place-00.png');
+          &.active{
+            .slider-article-description{
+              opacity: 1;
+              display: block;
+            }
+          }
+          .slider-article-description{
+            width: 50%;
+            opacity: 0;
+            display: none;
+            position: absolute;
+            text-align: left;
+            left: 40px;
+            bottom: 40px;
+            font: {
+              size: 48px;
+              weight: 500;
+            }
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .work-gallery-article{
+    width: calc(35% - 40px);
+    @include flex-col-center;
+    align-items: flex-end;
+    .au-h2, .au-h3, .au-p{
+      display: block;
+      text-align: right;
+    }
+    .au-h2{
+      margin-bottom: 150px!important;
+    }
+    .au-h3{
+      color: $primary-3;
+    }
+  }
+}
+
+.time{
+  margin-top: 160px;
+  .au-h3{
+    color: $primary-3;
+    display: block;
+    text-align: center;
+  }
+  .au-bar{
+    width: 100%;
+    height: 100px;
+    &::after{
+      content: '';
+      display: block;
+      margin: 0 auto;
+      margin-top: calc((200px / 2) - 10px);
+      width: 70%;
+      height: 10px;
+      background-color: $primary-3;
+    }
+    .bar-button{
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: $primary-2;
+      border: 0;
+      outline: 0;
+      border-radius: 50px;
+      top: calc((200px / 2) + 50px + 10px);
+      left: calc(15%  - (50px / 2));
+      cursor: pointer;
+    }
+  }
+  .au-p{
+    font: {
+      size: 24px;
+      weight: 300;
+    }
+    line-height: 40px;
+    color: $primary-3;
+    display: block;
+    text-align: center;
+  }
+}
+
+.other{
+  width: 100%;
+  @include flex-row-center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: 80px;
+  .other-article{
+    .au-h2{
+      color: $primary-1;
+      margin-bottom: 60px!important;
+    }
+    .au-p {
+      color: $primary-1;
+      margin-bottom: 100px!important;
+    }
+  }
+  .slider{
+    .slider-controllers{
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      .nav-list{
+        height: 100%;
+        width: 100%;
+        @include flex-row-center;
+        justify-content: space-between;
+        .nav-list-element{
+          height: 100%;
+          width: 50px;
+          cursor: pointer;
+        }
+      }
+    }
+    &.cards.phone{
+      width: 100%;
+      @include flex-row-center;
+      flex-direction: row-reverse;
+      justify-content: center;
+      position: relative;
+      .slider-element{
+        margin-left: 40px;
+        &:last-of-type{
+          margin-left: 0px;
+        }
+        &:nth-child(even){
+          .slider-article{
+            background-image: url('../assets/place-01.png');
+          }
+        }
+        .slider-article{
+          position: relative;
+          border-radius: 40px;
+          background-color: gray;
+          width: 400px;
+          height: 700px;
+          background: {
+            position: center;
+            repeat: no-repeat;
+            size: cover;
+            color: $gray;
+            blend-mode: multiply;
+          }
+          background-image: url('../assets/place-02.png');
+          opacity: 0;
+          display: none;
+          &.active{
+            opacity: 1;
+            display: block;
+          }
+          .slider-article-title{
+            width: calc(100% - 80px);
+            position: absolute;
+            text-align: left;
+            left: 40px;
+            bottom: 80px;
+            font: {
+              size: 40px;
+              weight: 300;
+            }
+            line-height: 48px;
+            color: white;
+          }
+          .slider-article-description{
+            content: '';
+            display: block;
+            position: absolute;
+            right: -100%;
+            top: calc(50% - 150px);
+            width: 100%;
+            height: 300px;
+            padding: 20px 20px 20px 20px;
+            background-color: $primary-1;
+            @include flex-col-center;
+            font: {
+              size: 24px;
+              weight: 500;
+            }
+            line-height: 40px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .work-gallery-article{
+    width: calc(35% - 40px);
+    @include flex-col-center;
+    align-items: flex-end;
+    .au-h2, .au-h3, .au-p{
+      display: block;
+      text-align: right;
+    }
+    .au-h2{
+      margin-bottom: 150px!important;
+    }
+    .au-h3{
+      color: $primary-3;
+    }
   }
 }
