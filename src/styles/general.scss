@@ -7,11 +7,11 @@
   box-sizing: border-box;
 }
 
-.au-ul, .au-li {
+.au-ul, .au-li{
   @include clean-list;
 }
 
-.au-a {
+.au-a{
   @include clean-href;
   cursor: pointer;
 }
@@ -473,6 +473,175 @@ body {
   }
 }
 
+.methodology{
+  margin-top: 120px;
+  padding-left: 40px;
+  padding-right: 40px;
+  @include flex-row-center;
+  .work-gallery-article{
+    width: 60%;
+    .au-h2, .au-p{
+      color: $primary-2;
+      width: 40%;
+    }
+    .au-h2{
+      margin-bottom: 160px!important;
+    }
+  }
+  .cards{
+    width: 40%;
+    max-width: 40%;
+    min-width: 40%;
+    @include flex-row-center;
+    flex-wrap: wrap;
+    .card-element{
+      width: calc(33% - 40px);
+      min-width: calc(33% - 40px);
+      max-width: calc(33% - 40px);
+      margin: 20px;
+      margin-bottom: 20px!important;
+      .card-article{
+        width: 100%;
+        height: 200px;
+        background-color: $white;
+        @include shadow;
+        @include flex-col-center;
+        .aurea-font{
+          font-size: 36px;
+        }
+        .card-article-description{
+          font: {
+            size: 16px;
+            weight: 500;
+          }
+          color: $primary-3;
+          line-height: 24px;
+          text-align: center;
+          width: 100%;
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+.contact{
+  margin-top: 120px;
+  @include flex-col-center;
+  .au-group.heading{
+    @include flex-col-center;
+    margin-bottom: 40px;
+    .au-h2{
+      font: {
+        size: 40px;
+        weight: 500;
+      }
+      color: $secondary-2;
+      margin-bottom: 40px!important;
+    }
+    .au-p{
+      font: {
+        size: 16px;
+        weight: 24px;
+      }
+      color: $secondary-2;
+    }
+  }
+  .au-form{
+    width: 60%;
+    @include flex-row-center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    .au-input-component{
+      width: calc(50% - 40px);
+      margin: 20px;
+    }
+    .au-textarea-component{
+      width: calc(100% - 40px);
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+    .au-button{
+      align-self: flex-end;
+      margin-top: 40px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.footer{
+  background-color: $secondary-2;
+  color: $white;
+  @include flex-row-center;
+  padding: 80px;
+  padding-top: 160px;
+  padding-bottom: 120px;
+  align-items: flex-start;
+  .au-fragment{
+    @include flex-col-center;
+    &.filosophy{
+      width: 40%;
+      min-width: 40%;
+      max-width: 40%;
+      margin-right: 80px;
+    }
+    &.links{
+      width: 20%;
+      min-width: 20%;
+      max-width: 20%;
+      margin-right: 80px;
+      .footer-nav{
+        .nav-list{
+          .nav-list-element{
+            margin-bottom: 40px!important;
+            &:last-of-type{
+              margin-bottom: 0px!important;
+            }
+          }
+        }
+      }
+    }
+    &.social{
+      width: 30%;
+      min-width: 30%;
+      max-width: 30%;
+      .logo{
+        margin-bottom: 40px!important;
+      }
+      .social-links{
+        @include flex-row-center;
+        .social-links-element{
+          margin-right: 20px;
+          .au-a{
+            .aurea-font{
+              font-size: 32px;
+            }
+          }
+          &:last-of-type{
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+    .au-h3, .au-p, .au-li, .au-link{
+      color: $white;
+      width: 100%;
+      font-weight: 300;
+    }
+    .au-h3{
+      margin-bottom: 40px!important;
+      font: {
+        size: 24px;
+      }
+      line-height: 40px;
+    }
+    .au-p{
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
 .au-button{
   height: 50px;
   line-height: 50px;
@@ -485,15 +654,36 @@ body {
   text-align: center;
   padding-left: 40px;
   padding-right: 40px;
-  background-color: $primary-4;
   font: {
     size: 20px;
     weight: 500;
+  }
+  &.primary-1{
+    background-color: $primary-1;
+  }
+  &.primary-2{
+    background-color: $primary-2;
+  }
+  &.primary-3{
+    background-color: $primary-3;
+  }
+  &.primary-4{
+    background-color: $primary-4;
+  }
+  &.secondary-1{
+    background-color: $secondary-1;
+  }
+  &.secondary-2{
+    background-color: $secondary-2;
+  }
+  &.secondary-3{
+    background-color: $secondary-3;
   }
 }
 
 .au-input-component{
   .au-input{
+    width: 100%;
     outline: 0;
     border-radius: 4px;
     height: 50px;
@@ -514,13 +704,154 @@ body {
       }
     }
   }
+  &.primary-1{
+    .au-input{
+      color: $primary-1;
+      border: 2px solid $primary-1;
+      &::placeholder{
+        color: $primary-1;
+      }
+    }
+  }
+  &.primary-2{
+    .au-input{
+      color: $primary-2;
+      border: 2px solid $primary-2;
+      &::placeholder{
+        color: $primary-2;
+      }
+    }
+  }
+  &.primary-3{
+    .au-input{
+      color: $primary-3;
+      border: 2px solid $primary-3;
+      &::placeholder{
+        color: $primary-3;
+      }
+    }
+  }
+  &.primary-4{
+    .au-input{
+      color: $primary-4;
+      border: 2px solid $primary-4;
+      &::placeholder{
+        color: $primary-4;
+      }
+    }
+  }
+  &.secondary-1{
+    .au-input{
+      color: $secondary-1;
+      border: 2px solid $secondary-1;
+      &::placeholder{
+        color: $secondary-1;
+      }
+    }
+  }
+  &.secondary-2{
+    .au-input{
+      color: $secondary-2;
+      border: 2px solid $secondary-2;
+      &::placeholder{
+        color: $secondary-2;
+      }
+    }
+  }
+  &.secondary-3{
+    .au-input{
+      color: $secondary-3;
+      border: 2px solid $secondary-3;
+      &::placeholder{
+        color: $secondary-3;
+      }
+    }
+  }
 }
 
-.methodology{
-  margin-top: 120px;
-}
-
-.footer{
-  background-color: $secondary-2;
-  color: $white;
+.au-textarea-component{
+  height: 200px;
+  .au-textarea{
+    outline: 0;
+    width: 100%;
+    border-radius: 4px;
+    height: 100%;
+    border: 2px solid $primary-4;
+    color: $primary-4;
+    font: {
+      size: 24px;
+      weight: 300;
+    }
+    padding: 20px;
+    &::placeholder{
+      color: $primary-4;
+      font: {
+        size: 24px;
+        weight: 300;
+      }
+    }
+  }
+  &.primary-1{
+    .au-textarea{
+      color: $primary-1;
+      border: 2px solid $primary-1;
+      &::placeholder{
+        color: $primary-1;
+      }
+    }
+  }
+  &.primary-2{
+    .au-textarea{
+      color: $primary-2;
+      border: 2px solid $primary-2;
+      &::placeholder{
+        color: $primary-2;
+      }
+    }
+  }
+  &.primary-3{
+    .au-textarea{
+      color: $primary-3;
+      border: 2px solid $primary-3;
+      &::placeholder{
+        color: $primary-3;
+      }
+    }
+  }
+  &.primary-4{
+    .au-textarea{
+      color: $primary-4;
+      border: 2px solid $primary-4;
+      &::placeholder{
+        color: $primary-4;
+      }
+    }
+  }
+  &.secondary-1{
+    .au-textarea{
+      color: $secondary-1;
+      border: 2px solid $secondary-1;
+      &::placeholder{
+        color: $secondary-1;
+      }
+    }
+  }
+  &.secondary-2{
+    .au-textarea{
+      color: $secondary-2;
+      border: 2px solid $secondary-2;
+      &::placeholder{
+        color: $secondary-2;
+      }
+    }
+  }
+  &.secondary-3{
+    .au-textarea{
+      color: $secondary-3;
+      border: 2px solid $secondary-3;
+      &::placeholder{
+        color: $secondary-3;
+      }
+    }
+  }
 }

@@ -190,7 +190,7 @@ const Home:React.FunctionComponent = () => {
             <div className='au-input-component'>
               <input type='text' className='au-input' placeholder='@correo'/>
             </div>
-            <button type='button' className='au-button'>suscribirme</button>
+            <button type='button' className='au-button primary-4'>suscribirme</button>
           </div>
         </div>
       </section>
@@ -257,40 +257,45 @@ const Home:React.FunctionComponent = () => {
       </section>
       {/* CONTACT SECTION */}
       <section className='au-section contact'>
-        <h2 className='au-h2'>
-          Comencemos
-        </h2>
-        <p className='au-p'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
-        </p>
-        <form>
-          <div className='au-input-component'>
+        <div className='au-group heading'>
+          <h2 className='au-h2'>
+            Comencemos
+          </h2>
+          <p className='au-p'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
+          </p>
+        </div>
+        <form className='au-form'>
+          <div className='au-input-component secondary-2'>
             <input type='text' className='au-input' placeholder='nombre'/>
           </div>
-          <div className='au-input-component'>
+          <div className='au-input-component secondary-2'>
             <input type='text' className='au-input' placeholder='@correo'/>
           </div>
-          <div className='au-textarea-component'>
+          <div className='au-textarea-component secondary-2'>
             <textarea className='au-textarea' placeholder='cuéntanos un poco de tu proyecto'/>
           </div>
-          <button type='button' className='au-button disabled' disabled>Enviar</button>
+          <button type='button' className='au-button disabled primary-1' disabled>Enviar</button>
         </form>
       </section>
       {/* FOOTER SECTION */}
       <footer className='au-section footer'>
-        <div className='au-fragment'>
+        <div className='au-fragment filosophy'>
           <h3 className='au-h3'>
             Filosofía
           </h3>
           <p className='au-p'>
             Somos nómades digitales y estamos seguros que un buen resultado se logra en cualquier momento o lugar; que un proyecto exitoso no es el que tiene más horas, si no al que se le dedica más corazón.
-            <br/>
+            <br/><br/>
             Nos mueve el equilibrio, el respeto y el amor por los detalles.  Somos defensores de las causas nobles. Respetamos límites. Somos curiosos.
-            <br/>
+            <br/><br/>
             Creemos que una buena idea merece ser bien comunicada. Que esas que hacen bien al mundo no deberían desvanecerse. Nos gusta contar historias y queremos contar la tuya.
           </p>
         </div>
-        <div className='au-fragment'>
+        <div className='au-fragment links'>
+          <h3 className='au-h3'>
+            Aurea Content
+          </h3>
           <nav className='au-nav footer-nav'>
             <ul className='au-ul nav-list'>
               <li className='au-li nav-list-element'>
@@ -326,9 +331,9 @@ const Home:React.FunctionComponent = () => {
             </ul>
           </nav>
         </div>
-        <div className='au-fragment'>
-          <a className='au-a'>
-            <img src='#' alt='logo agencia Aurea'/>
+        <div className='au-fragment social'>
+          <a className='au-a logo'>
+            <img src='./src/assets/logo-2.svg' alt='logo agencia Aurea'/>
           </a>
           <ul className='au-ul social-links'>
             <li className='au-li social-links-element'>
