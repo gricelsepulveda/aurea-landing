@@ -1,22 +1,43 @@
 {
-  "buton": {
+  "button": {
+    "kind": "full",
+    "disabled": false,
+    "validation": true,
+    "value": "",
+    "altClass": "undefined",
+    "color": "primary-1",
+    "opacity": 1,
+    "onClick": "() => null",
+    "tabIndex": 0,
     "full": {
-      "wSize": 40,
-      "wUnit": "px",
-      "wHeight": "auto",
-      "hUnit": "-"
+      "width": {
+        "size": 40,
+        "unit": "px"
+      },
+      "height:": {
+        "size": 40,
+        "unit": "px"
+      }
     },
     "min": {
-      "wSize": 40,
-      "wUnit": "px",
-      "wHeight": "auto",
-      "hUnit": "-"
+      "width": {
+        "size": 40,
+        "unit": "px"
+      },
+      "height:": {
+        "size": 40,
+        "unit": "px"
+      }
     },
     "icon":{
-      "wSize": 40,
-      "wUnit": "px",
-      "wHeight": 40,
-      "hUnit": "px"
+      "width": {
+        "size": 40,
+        "unit": "px"
+      },
+      "height:": {
+        "size": 40,
+        "unit": "px"
+      }
     }
   }
 }
