@@ -5,7 +5,7 @@ export const setDimensons = (
     h:GeneralTypes['dimensions'], 
   ) => {
     return {
-      width: `${w.size}${w.unit}`,
-      height: `${h.size}${h.unit}`
+      width: `${w.size}${w.unit != '-' ? w.unit : ''}`,
+      height: `${h.size}${h.unit != '-' ? h.unit : ''}`
     }
 }

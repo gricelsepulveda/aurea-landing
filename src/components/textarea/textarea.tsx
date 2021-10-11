@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react'
 import {classNames} from '../../utils/classNames.js'
 //TYPES
 import {GeneralTypes} from '../../types/types'
-import { setDimensons } from '../../utils/setDimensions.js'
+import {setDimensons} from '../../utils/setDimensions.js'
 
 export type TextareaType = {
   disabled: boolean,

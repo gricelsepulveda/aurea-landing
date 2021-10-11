@@ -1,0 +1,22 @@
+{
+  "buton": {
+    "full": {
+      "wSize": 40,
+      "wUnit": "px",
+      "wHeight": "auto",
+      "hUnit": "-"
+    },
+    "min": {
+      "wSize": 40,
+      "wUnit": "px",
+      "wHeight": "auto",
+      "hUnit": "-"
+    },
+    "icon":{
+      "wSize": 40,
+      "wUnit": "px",
+      "wHeight": 40,
+      "hUnit": "px"
+    }
+  }
+}
