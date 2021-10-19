@@ -19,7 +19,7 @@ const Home:React.FunctionComponent = () => {
         <ul className='au-ul nav-list'>
           <li className='au-li nav-list-element'>
             <a className='au-a nav-list-link'>
-              Nómades Digitales
+              Nómades Gricel
             </a>
           </li>
           <li className='au-li nav-list-element'>
