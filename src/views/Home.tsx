@@ -102,7 +102,7 @@ const Home:React.FunctionComponent = () => {
         </ul>
         <article className='au-article work-gallery-article'>
           <h2 className='au-h2'>
-            Experiencias de contenido
+            HOLAAAAAA
           </h2>
           <h3 className='au-h3'>
             Ideas que hacen bien

@@ -32,7 +32,7 @@ export const mainNavData:NavType['data'] = [
     action: undefined
   },
   {
-    label: 'Experiencias de Contenido',
+    label: 'Hola!!!',
     link: '',
     active: false,
     img: {
