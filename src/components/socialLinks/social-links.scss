@@ -1,0 +1,17 @@
+@import '../../styles/common/mixins.scss';
+@import '../../styles/common/vars.scss';
+
+.social-links{
+  @include flex-row-center;
+  .social-links-element{
+    margin-right: 20px;
+    .au-a{
+      .aurea-font{
+        font-size: 32px;
+      }
+    }
+    &:last-of-type{
+      margin-right: 0px;
+    }
+  }
+}

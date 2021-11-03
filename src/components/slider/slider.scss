@@ -1,0 +1,172 @@
+@import '../../styles/common/mixins.scss';
+@import '../../styles/common/vars.scss';
+
+.slider{
+  width: 100%;
+  position: relative;
+  &.phrases{
+    height: 60vh;
+    .slider-element{
+      .slider-article{
+        display: none;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        &.active{
+          display: block;
+          opacity: 1;
+        }
+        .slider-article-description{
+          display: block;
+          position: relative;
+          line-height: 60vh;
+          margin: 0 auto;
+          text-align: center;
+          font: {
+            size: 40px;
+            weight: 300;
+          }
+          color: $primary-3;
+        }
+      }
+    }
+  }
+  &.cards{
+    width: 65%;
+    @include flex-row-center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 250px;
+      background-color: $primary-3;
+    }
+    .slider-element{
+      margin-left: 40px;
+      &:last-of-type{
+        margin-left: 0px;
+      }
+      .slider-article{
+        position: relative;
+        border-radius: 40px;
+        background-color: gray;
+        width: 400px;
+        height: 500px;
+        background: {
+          position: center;
+          repeat: no-repeat;
+          size: cover;
+          color: $gray;
+          blend-mode: multiply;
+        }
+        &.active{
+          .slider-article-description{
+            opacity: 1;
+            display: block;
+          }
+        }
+        .slider-article-description{
+          width: 50%;
+          opacity: 0;
+          display: none;
+          position: absolute;
+          text-align: left;
+          left: 40px;
+          bottom: 40px;
+          font: {
+            size: 48px;
+            weight: 500;
+          }
+          color: white;
+        }
+      }
+    }
+  }
+  &.cards.phone{
+    width: 100%;
+    @include flex-row-center;
+    flex-direction: row-reverse;
+    justify-content: center;
+    position: relative;
+    .slider-element{
+      margin-left: 40px;
+      &:last-of-type{
+        margin-left: 0px;
+      }
+      .slider-article{
+        position: relative;
+        border-radius: 40px;
+        background-color: gray;
+        width: 400px;
+        height: 700px;
+        background: {
+          position: center;
+          repeat: no-repeat;
+          size: cover;
+          color: $gray;
+          blend-mode: multiply;
+        }
+        opacity: 0;
+        display: none;
+        &.active{
+          opacity: 1;
+          display: block;
+        }
+        .slider-article-title{
+          width: calc(100% - 80px);
+          position: absolute;
+          text-align: left;
+          left: 40px;
+          bottom: 80px;
+          font: {
+            size: 40px;
+            weight: 300;
+          }
+          line-height: 48px;
+          color: white;
+        }
+        .slider-article-description{
+          content: '';
+          display: block;
+          position: absolute;
+          right: -100%;
+          top: calc(50% - 150px);
+          width: 100%;
+          height: 300px;
+          padding: 20px 20px 20px 20px;
+          background-color: $primary-1;
+          @include flex-col-center;
+          font: {
+            size: 24px;
+            weight: 500;
+          }
+          line-height: 40px;
+          color: white;
+        }
+      }
+    }
+  }
+  .slider-controllers{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    .nav-list{
+      height: 100%;
+      width: 100%;
+      @include flex-row-center;
+      justify-content: space-between;
+      .nav-list-element{
+        height: 100%;
+        width: 50px;
+        cursor: pointer;
+      }
+    }
+  }
+}
