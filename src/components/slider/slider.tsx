@@ -147,13 +147,13 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
                 className='au-li nav-list-element back'
                 onClick={() => handleClick('back')}
               >
-                <i className='aurea-font caret'/>
+                <i className='aurea-font indicator'/>
               </li>
               <li 
                 className='au-li nav-list-element next'
                 onClick={() => handleClick('next')}
               >
-                <i className='aurea-font caret'/>
+                <i className='aurea-font indicator'/>
               </li>
             </ul>
           </nav>

@@ -1,6 +1,7 @@
 @import "./common/vars.scss";
 @import "./common/mixins.scss";
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap');
+@import "./common/aurea-font.scss";
 
 * {
   @include zero-soft;
