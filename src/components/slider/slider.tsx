@@ -106,11 +106,13 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
           >
             <article 
               className={`au-article slider-article ${ name === _active ? 'active' : ''}`}
+              style={{
+                backgroundImage: `url(${img})`
+              }}
             >
               <h4 className='au-h4 slider-article-title'>
                 { title }
               </h4>
-              <img src={img} alt='avatar'/>
               <i className='aurea-font like'/>
               <i className='aurea-font link'/>
               <p className='au-p slider-article-description'>
@@ -147,13 +149,13 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
                 className='au-li nav-list-element back'
                 onClick={() => handleClick('back')}
               >
-                <i className='aurea-font caret'/>
+                <i className='aurea-font indicator'/>
               </li>
               <li 
                 className='au-li nav-list-element next'
                 onClick={() => handleClick('next')}
               >
-                <i className='aurea-font caret'/>
+                <i className='aurea-font indicator'/>
               </li>
             </ul>
           </nav>
