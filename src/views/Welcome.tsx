@@ -11,7 +11,7 @@ import {
 } from '../data/data'
 
 const Welcome:React.FunctionComponent<GeneralTypes['section']> = (props) => {
-  const [welcomeActive, setWelcomeActive] = useState('lorem-ipsum-1')
+  const [welcomeActive, setWelcomeActive] = useState('lorem-ipsum-3')
   return (
     <section className='au-section welcome' id={props.id}>
       <Slider 

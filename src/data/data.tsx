@@ -6,8 +6,8 @@ import { GeneralTypes } from '../types/types'
 
 export const mainNavData:NavType['data'] = [
   {
-    label: 'Nómades Digitales',
-    link: '#',
+    label: 'Perrito',
+    link: '#welcome',
     active: false,
     img: {
       src: '',
@@ -16,7 +16,7 @@ export const mainNavData:NavType['data'] = [
     action: undefined
   },
   {
-    label: 'Digital Well-Being',
+    label: 'Gatito',
     link: '#',
     active: false,
     img: {
@@ -36,7 +36,7 @@ export const mainNavData:NavType['data'] = [
     action: undefined
   },
   {
-    label: 'Hola!!!',
+    label: 'Conejo',
     link: '#',
     active: false,
     img: {
@@ -46,7 +46,7 @@ export const mainNavData:NavType['data'] = [
     action: undefined
   },
   {
-    label: 'Comencemos',
+    label: 'Raton',
     link: '#',
     active: false,
     img: {
@@ -59,7 +59,7 @@ export const mainNavData:NavType['data'] = [
 
 export const sliderHomeData:SliderType['data'] = [
   {
-    description: 'lorem ipsum dolor sit ame',
+    description: 'Hola chicos porfa modifiquenme',
     name: 'lorem-ipsum-1',
     title: 'Lorem ipsum',
     active: false,
@@ -73,8 +73,15 @@ export const sliderHomeData:SliderType['data'] = [
     img: '',
   },
   {
-    description: 'lorem ipsum dolor sit ame',
+    description: 'Hola desde la numero 3',
     name: 'lorem-ipsum-3',
+    title: 'Lorem ipsum',
+    active: false,
+    img: '',
+  },
+  {
+    description: 'Hola soy la slider 4',
+    name: 'slider-4',
     title: 'Lorem ipsum',
     active: false,
     img: '',
@@ -83,16 +90,16 @@ export const sliderHomeData:SliderType['data'] = [
 
 export const tagData:TagType['data'] = [
   {
-    link: '#',
-    title: 'lorem'
+    link: '',
+    title: 'flor amarilla'
   },
   {
     link: '#',
-    title: 'ipsum'
+    title: 'flor azul'
   },
   {
     link: '#',
-    title: 'sit'
+    title: 'flor roja'
   }
 ]
 
@@ -112,6 +119,12 @@ export const sliderCardsData:SliderType['data'] = [
     img: './src/assets/place-01.png',
   },
 ]
+
+export const workGalleryData:GeneralTypes['workGallery'] = {
+  title: 'Hola Nicol',
+  subtitle: 'Ideas que hacen bien',
+  description: 'Creamos experiencias de contenido desde el bienestar digital. ¡Queremos contar con las tuyas!'
+}
 
 export const footerData:GeneralTypes['footerData'] = {
   title: 'Filosofía',
@@ -253,11 +266,6 @@ export const newsletterData:GeneralTypes['newsletterType'] = {
   email: 'info@aureacontent.cl'
 }
 
-export const workGalleryData:GeneralTypes['workGallery'] = {
-  title: 'Hola!',
-  subtitle: 'Ideas que hacen bien',
-  description: 'Creamos experiencias de contenido desde el bienestar digital. ¡Queremos contar con las tuyas!'
-}
 
 export const timeData:GeneralTypes['time'] = {
   title: 'Revisa si el tiempo que pasas frente a una pantalla es el adecuado',
@@ -265,7 +273,7 @@ export const timeData:GeneralTypes['time'] = {
 }
 
 export const contactData:GeneralTypes['contact'] = {
-  title: 'Comencemos',
+  title: 'Hola chiquillos',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam',
   form: [
     {
