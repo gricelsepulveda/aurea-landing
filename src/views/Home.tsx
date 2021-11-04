@@ -10,9 +10,12 @@ import WorkGallery from './WorkGallery'
 import Time from './Time'
 import Other from './Other'
 import Contact from './Contact'
+//TYPES
+import { GeneralTypes } from '../types/types'
 //DATA
 import { 
-  mainNavData
+  mainNavData,
+  sectionData,
 } from '../data/data'
 
 const Home:React.FunctionComponent = () => {
@@ -27,28 +30,44 @@ const Home:React.FunctionComponent = () => {
       />
 
       {/* WELCOME SECTION */}
-      <Welcome/>
+      <Welcome
+        id={sectionData.filter((section:GeneralTypes['section']) => section.name === 'welcome')[0].id}
+      />
 
       {/* WORK GALLERY SECTION */}
-      <WorkGallery/>
+      <WorkGallery
+        id={sectionData.filter((section:GeneralTypes['section']) => section.name === 'workgallery')[0].id}
+      />
 
       {/* TIME SECTION */}
-      <Time/>
+      <Time
+        id={sectionData.filter((section:GeneralTypes['section']) => section.name === 'time')[0].id}
+      />
 
       {/*OTHER SECTION */}
-      <Other/>
+      <Other
+        id={sectionData.filter((section:GeneralTypes['section']) => section.name === 'other')[0].id}
+      />
 
       {/*NEWSLETTER SECTION */}
-      <Newsletter/>
+      <Newsletter
+        id={sectionData.filter((section:GeneralTypes['section']) => section.name === 'newsletter')[0].id}
+      />
 
       {/* METHODOLOGY SECTION */}
-      <Methodology/>
+      <Methodology
+        id={sectionData.filter((section:GeneralTypes['section']) => section.name === 'methodology')[0].id}
+      />
 
       {/* CONTACT SECTION */}
-      <Contact/>
+      <Contact
+        id={sectionData.filter((section:GeneralTypes['section']) => section.name === 'contact')[0].id}
+      />
 
       {/* FOOTER SECTION */}
-      <Footer/>
+      <Footer
+        id={sectionData.filter((section:GeneralTypes['section']) => section.name === 'footer')[0].id}
+      />
     </>
   )
 }

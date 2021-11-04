@@ -25,6 +25,7 @@ const Nav:React.FunctionComponent<NavType> = (props) => {
   //STATES
   const [_active, _setActive] = useState<NavType['active']>(active)
   const [_data, _setData] = useState<NavType['data']>(data)
+  const [_open, _setOpen] = useState<boolean>(false)
 
   //HANDLERS
   const handleClick = (link:GeneralTypes['link']) => {
@@ -53,13 +54,17 @@ const Nav:React.FunctionComponent<NavType> = (props) => {
   return (
     mode == 'main' ?
     <nav className='au-nav main-nav'>
-      <ul className='au-ul nav-list'>
+      <i 
+        className='au-nav-btn'
+        onClick={() => _setOpen(!_open)}
+      />
+      <ul className={`au-ul nav-list ${_open ? 'open' : ''}`}>
         {
           _data ? _data.map((element:GeneralTypes['link'], index) => {
             const { label, link, img } = element
             return (
               <li 
-                className={`au-li nav-list-element ${_active === label ? 'active' : ''}`}
+                className={`au-li nav-list-element ${img.src != '' ? 'img' : ''} ${_active === label ? 'active' : ''}`}
                 onClick={() => handleClick(element)}
                 key={`au-li-nav-${index}-${label.substring(0,3)}`}
               >

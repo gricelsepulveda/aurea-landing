@@ -67,7 +67,8 @@ export type GeneralTypes = {
     title: string,
     description: string,
     link: string,
-    phoneSlider: GeneralTypes['sliderData'][]
+    phoneSlider: GeneralTypes['sliderData'][],
+    avatar: string,
   },
   footerData:{
     title: string,
@@ -85,5 +86,10 @@ export type GeneralTypes = {
     description: string,
     form: GeneralTypes['control'][],
     button: string,
-  }
+  },
+  section: {
+    id: string,
+    name?: string,
+  },
+  sections: GeneralTypes['section'][]
 }

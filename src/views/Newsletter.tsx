@@ -1,12 +1,14 @@
 import React from 'react'
+//TYPES
+import { GeneralTypes } from '../types/types'
 //DATA
 import { 
   newsletterData
 } from '../data/data'
 
-const Newsletter:React.FunctionComponent = () => {
+const Newsletter:React.FunctionComponent<GeneralTypes['section']> = (props) => {
   return (
-    <section className='au-section newsletter'>
+    <section className='au-section newsletter' id={props.id}>
       <h2 className='au-h2 newsletter'>
         { newsletterData.title }
       </h2>

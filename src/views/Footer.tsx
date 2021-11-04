@@ -2,15 +2,17 @@ import React from 'react'
 //COMPONENTS
 import Nav from '../components/nav/nav'
 import SocialLinks from '../components/socialLinks/socialLinks'
+//TYPES
+import { GeneralTypes } from '../types/types'
 //DATA
 import { 
   footerData,
   footerNavData,
 } from '../data/data'
 
-const Footer:React.FunctionComponent = () => {
+const Footer:React.FunctionComponent<GeneralTypes['section']> = (props) => {
   return (
-    <footer className='au-section footer'>
+    <footer className='au-section footer' id={props.id}>
       <div className='au-fragment filosophy'>
         <h3 className='au-h3'>
           {footerData.title}

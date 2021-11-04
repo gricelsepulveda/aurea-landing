@@ -6,7 +6,7 @@ import {
   contactData
 } from '../data/data'
 
-const Contact:React.FunctionComponent = () => {
+const Contact:React.FunctionComponent<GeneralTypes['section']> = (props) => {
 
   const renderForm = (data:GeneralTypes['contact']['form']) => {
     const renderInput = (control:GeneralTypes['control'], index:number) => (
@@ -41,7 +41,7 @@ const Contact:React.FunctionComponent = () => {
   }
 
   return (
-    <section className='au-section contact'>
+    <section className='au-section contact' id={props.id}>
       <div className='au-group heading'>
         <h2 className='au-h2'>
           { contactData.title }
@@ -54,7 +54,7 @@ const Contact:React.FunctionComponent = () => {
         {
           renderForm(contactData.form)
         }
-        <button type='button' className='au-button disabled primary-1' disabled>
+        <button type='button' className='au-button primary-1'>
           { contactData.button }
         </button>
       </form>

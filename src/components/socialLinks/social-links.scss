@@ -5,6 +5,9 @@
   @include flex-row-center;
   .social-links-element{
     margin-right: 20px;
+    @media #{$sm}{
+      margin-right: 40px;
+    }
     .au-a{
       .aurea-font{
         font-size: 32px;

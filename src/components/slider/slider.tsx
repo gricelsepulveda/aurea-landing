@@ -8,12 +8,13 @@ import './slider.scss'
 export type SliderType = {
   data?:GeneralTypes['sliderData'][],
   active?: string,
-  mode?: string
+  mode?: string,
+  avatar?: string,
 }
 
 const Slider:React.FunctionComponent<SliderType> = (props) => {
   //DEST. PROPS
-  const { data, active, mode } = props
+  const { data, active, mode, avatar } = props
   const [_data, _setData] = useState<SliderType['data'] | null>(data)
   const [_active, _setActive] = useState<SliderType['active'] | null>(active)
   const [_activeIndex, _setActiveIndex] = useState<number | null>(0)
@@ -82,7 +83,7 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
       case 'cards':
         result = (
           <li 
-            className='au-li slider-element'
+            className={`au-li slider-element ${ name === _active ? 'active' : ''}`}
             key={`au-li-slider-${mode}-${index}-${name.substring(0,3)}`}
           >
             <article 
@@ -113,8 +114,15 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
               <h4 className='au-h4 slider-article-title'>
                 { title }
               </h4>
-              <i className='aurea-font like'/>
-              <i className='aurea-font link'/>
+              <div className='au-buttons-phone'>
+                <div
+                  style={{
+                    backgroundImage: `url(${avatar})`
+                  }}
+                  className='au-avatar'/>
+                <i className='aurea-font like'/>
+                <i className='aurea-font link'/>
+              </div>
               <p className='au-p slider-article-description'>
                 { description }
               </p>

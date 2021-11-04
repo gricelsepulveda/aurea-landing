@@ -223,7 +223,7 @@ export const methodologyData:GeneralTypes['methodologyType'] = {
       title: 'Asesoría'
     },
     {
-      icon: 'love',
+      icon: 'user-love',
       title: 'Diseño UX-UI'
     },
     {
@@ -235,7 +235,7 @@ export const methodologyData:GeneralTypes['methodologyType'] = {
       title: 'Contenido'
     },
     {
-      icon: 'alarm',
+      icon: 'alert',
       title: 'Social Ads'
     },
     {
@@ -294,6 +294,7 @@ export const otherData:GeneralTypes['other'] = {
   title: 'Nómadas digitales',
   description: 'Revisa si el tiempo que pasas frente a una pantalla es el adecuado',
   link: ' @áureacontent',
+  avatar: './src/assets/avatar.png',
   phoneSlider: [
     {
       title: 'Respeta tu tiempo de ocio diario 1',
@@ -318,3 +319,38 @@ export const otherData:GeneralTypes['other'] = {
     },
   ]
 }
+
+export const sectionData:GeneralTypes['sections'] = [
+  {
+    name: 'welcome',
+    id: 'welcome'
+  },
+  {
+    name: 'time',
+    id: 'time'
+  },
+  {
+    name: 'methodology',
+    id: 'methodology'
+  },
+  {
+    name: 'footer',
+    id: 'footer'
+  },
+  {
+    name: 'newsletter',
+    id: 'newsletter'
+  },
+  {
+    name: 'workgallery',
+    id: 'workgallery'
+  },
+  {
+    name: 'contact',
+    id: 'contact'
+  },
+  {
+    name: 'other',
+    id: 'other'
+  },
+]

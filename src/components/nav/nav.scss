@@ -7,16 +7,67 @@
   top: 0;
   left: 0;
   background-color: rgba($secondary-1, 1);
-  z-index: 1;
+  z-index: 90;
   padding-top: 40px;
   padding-bottom: 20px;
+  @media #{$sm}{
+    padding-top: 70px;
+    padding-bottom: 0px;
+  }
+  .au-nav-btn{
+    display: none;
+    @media #{$sm}{
+      width: 50px;
+      height: 50px;
+      background: rgba($black, 0.125);
+      border-radius: 4px;
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      z-index: 99;
+      @include flex-col-center;
+      cursor: pointer;
+      &::after, &::before{
+        margin-top: -2px;
+        @include flex-col-center;
+        text-align: center;
+        margin-left: -5px;
+        width: 36px;
+        height: 10px;
+        font-size: 48px;
+        line-height: 10px;
+        content: '-';
+        color: $secondary-2;
+      }
+    }
+  }
   .nav-list{
     width: 100%;
     @include flex-row-center;
+    @media #{$sm}{
+      flex-direction: column;
+      overflow: hidden;
+      height: 0px;
+      @include animate;
+      &.open{
+        height: auto;
+      }
+    }
     .nav-list-element{
       @include flex-row-center;
       margin-left: 40px;
       margin-right: 40px;
+      @media #{$sm}{
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: 1px solid rgba($black, 0.125);
+        &.img {
+          display: none;
+        }
+      }
       .nav-list-link{
         @include flex-row-center;
         text-align: center;
@@ -28,6 +79,7 @@
         color: $black;
         img {
           width: 100px;
+
         }
       }
     }

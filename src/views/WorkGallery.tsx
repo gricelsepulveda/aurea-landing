@@ -1,16 +1,18 @@
 import React, {useState} from 'react'
 //COMPONENTS
 import Slider from '../components/slider/slider'
+//TYPES
+import { GeneralTypes } from '../types/types'
 //DATA
 import { 
   workGalleryData,
   sliderCardsData
 } from '../data/data'
 
-const WorkGallery:React.FunctionComponent = () => {
+const WorkGallery:React.FunctionComponent<GeneralTypes['section']> = (props) => {
   const [workGalleryActive, setWorkGalleryActive] = useState('almacen-fibra-1')
   return (
-    <section className='au-section work-gallery'>
+    <section className='au-section work-gallery' id={props.id}>
       <Slider
         mode='cards'
         data={sliderCardsData}

@@ -6,9 +6,9 @@ import {
   methodologyData
 } from '../data/data'
 
-const Methodology:React.FunctionComponent = () => {
+const Methodology:React.FunctionComponent<GeneralTypes['section']> = (props) => {
   return (
-    <section className='au-section methodology'>
+    <section className='au-section methodology' id={props.id}>
       <article className='au-article work-gallery-article'>
         <h2 className='au-h2'>
           {methodologyData.title}
