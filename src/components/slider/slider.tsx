@@ -4,20 +4,24 @@ import React, {useState, useEffect} from 'react'
 import {GeneralTypes} from '../../types/types'
 //STYLES
 import './slider.scss'
+import TypeWriterText from './typewritterText'
 
 export type SliderType = {
   data?:GeneralTypes['sliderData'][],
   active?: string,
   mode?: string,
   avatar?: string,
+  animationSpeed?: number,
 }
 
 const Slider:React.FunctionComponent<SliderType> = (props) => {
   //DEST. PROPS
-  const { data, active, mode, avatar } = props
+  const { data, active, mode, avatar, animationSpeed } = props
   const [_data, _setData] = useState<SliderType['data'] | null>(data)
   const [_active, _setActive] = useState<SliderType['active'] | null>(active)
   const [_activeIndex, _setActiveIndex] = useState<number | null>(0)
+  const [countAnimation, setCountAnimation] = useState(0)
+  const [hover, setHover] = useState(false)
 
   //HANDLERS
   const handleActive = () => {
@@ -61,6 +65,30 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
     } 
   }
 
+  const intervalAnimation = setTimeout(() => {
+    if (_data){
+      setCountAnimation(countAnimation < (_data.length - 1) ? countAnimation + 1 : 0)
+    }
+  }, animationSpeed ? animationSpeed : 3000)
+
+  const handleAnimation = (mode:string) => {
+    const animationStyles = [
+      {
+        mode: 'phrases',
+        animator: intervalAnimation
+      },
+      {
+        mode: 'cards',
+        animator: () => null
+      },
+      {
+        mode: 'cards phone',
+        animator: () => null
+      }
+    ]
+    animationStyles.filter(style => style.mode === mode)[0].animator
+  }
+
   const handleMode = (slide:GeneralTypes['sliderData'], index:number) => {
     const { description, name, img, title } = slide
     let result
@@ -74,7 +102,7 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
             <article 
               className={`au-article slider-article ${ name === _active ? 'active' : ''}`}>
               <p className='au-p slider-article-description'>
-                { description }
+                <TypeWriterText activeReset={_active} text={description}/>
               </p>
             </article>
           </li>
@@ -133,9 +161,29 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
     return result
   }
 
+  
   //EFFECTS
   useEffect(() => {
-    handleActive()
+    if (mode === 'phrases'){
+      if (mode && _data){
+        handleAnimation('phrases')
+        _setActiveIndex(countAnimation)
+        _setActive(_data.filter((slide, index) => index == countAnimation)[0].name)
+      }
+    }
+  }, [countAnimation])
+
+  useEffect(() => {
+    clearInterval(intervalAnimation)
+    if (!hover){
+      handleAnimation(mode ? mode : 'phrases')
+    }
+  }, [hover])
+
+  useEffect(() => {
+    if (mode !== 'phrases'){
+      handleActive()
+    }
   }, [_active, active])
 
   //RENDER

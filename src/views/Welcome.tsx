@@ -18,6 +18,7 @@ const Welcome:React.FunctionComponent<GeneralTypes['section']> = (props) => {
         mode='phrases'
         data={sliderHomeData}
         active={welcomeActive}
+        animationSpeed={7000}
       />
       <Tag
         data={tagData}
