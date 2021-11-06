@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import {classNames} from '../../utils/classNames.js'
 //TYPES
 import {GeneralTypes} from '../../types/types'
-import {setDimensons} from '../../utils/setDimensions.js'
+import {setDimensions} from '../../utils/setDimensions.js'
 
 export type ButtonType = {
   kind: 'icon' | 'full' | 'min',
@@ -41,7 +41,7 @@ const Button:React.FunctionComponent<ButtonType> = (props) => {
         }`
       }
       tabIndex={tabIndex}
-      style={{ ...setDimensons(width, height), opacity: opacity}}
+      style={{ ...setDimensions(width, height), opacity: opacity}}
     >
       <button
         className='au-button'

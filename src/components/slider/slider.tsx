@@ -17,9 +17,9 @@ export type SliderType = {
 const Slider:React.FunctionComponent<SliderType> = (props) => {
   //DEST. PROPS
   const { data, active, mode, avatar, animationSpeed } = props
-  const [_data, _setData] = useState<SliderType['data'] | null>(data)
-  const [_active, _setActive] = useState<SliderType['active'] | null>(active)
-  const [_activeIndex, _setActiveIndex] = useState<number | null>(0)
+  const [_data, _setData] = useState<SliderType['data']>(data)
+  const [_active, _setActive] = useState<SliderType['active']>(active)
+  const [_activeIndex, _setActiveIndex] = useState<number>(0)
   const [countAnimation, setCountAnimation] = useState(0)
   const [hover, setHover] = useState(false)
 
@@ -202,14 +202,14 @@ const Slider:React.FunctionComponent<SliderType> = (props) => {
           <nav className='au-nav slider-controllers'>
             <ul className='au-ul nav-list'>
               <li 
-                className='au-li nav-list-element back'
-                onClick={() => handleClick('back')}
+                className={`au-li nav-list-element back ${(_activeIndex - 1) < 0 ? 'disabled' :  ''}`}
+                onClick={(_activeIndex - 1) < 0 ? () => handleClick('back') : () => null}
               >
                 <i className='aurea-font indicator'/>
               </li>
               <li 
-                className='au-li nav-list-element next'
-                onClick={() => handleClick('next')}
+                className={`au-li nav-list-element next ${_data ? (_activeIndex + 1) > (_data.length - 1) ? 'disabled' :  '' : ''}`}
+                onClick={_data ? (_activeIndex + 1) > (_data.length - 1) ? () => handleClick('next') : () => null : () => null}
               >
                 <i className='aurea-font indicator'/>
               </li>

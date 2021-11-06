@@ -1,6 +1,6 @@
 import { GeneralTypes } from "../types/types"
 
-export const setDimensons = (
+export const setDimensions = (
     w:GeneralTypes['dimensions'], 
     h:GeneralTypes['dimensions'], 
   ) => {
